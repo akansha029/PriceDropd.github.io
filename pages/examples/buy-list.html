@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Buy | PriceDropd</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- data table Css -->
+    <link rel="stylesheet" type="text/css" href="cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <!-- data table Css -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../dist/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../dist/css/style.css">
+    <style>
+      .form-inline {  
+          display: flex;
+          flex-flow: row wrap;
+          align-items: center;
+          justify-content: flex-end;
+        }
+
+        .form-inline label {
+          margin: 5px 10px 5px 0;
+        }
+
+        .form-inline input {
+          vertical-align: middle;
+          margin: 5px 10px 5px 0;
+          padding: 10px;
+          background-color: #fff;
+          border: 0px solid #ddd;
+        }
+
+        .form-inline button {
+          padding: 10px 20px;
+          background-color: dodgerblue;
+          border: 1px solid #ddd;
+          color: white;
+          cursor: pointer;
+        }
+
+        .form-inline button:hover {
+          background-color: royalblue;
+        }
+
+        @media (max-width: 800px) {
+          .form-inline input {
+            margin: 10px 0;
+          }
+          
+          .form-inline {
+            flex-direction: column;
+            align-items: stretch;
+          }
+        }
+      .switch {
+          position: relative;
+          display: inline-block;
+          width: 55px;
+          height: 28px;
+      }
+      .switch input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+      }
+      #inputState{
+          padding-left: 1rem;
+          padding-right: 10rem;
+      }
+      .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: .4s;
+          transition: .4s;
+      }
+      .slider:before {
+          position: absolute;
+          content: "";
+          height: 20px;
+          width: 20px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+      }
+      input:checked + .slider {
+          background-color: #5352ED !important;
+      }
+      input:focus + .slider {
+          box-shadow: 0 0 1px #BC4FF8;
+      }
+      input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+      }
+      /* Rounded sliders */
+      .slider.round {
+          border-radius: 34px;
+      }
+      .slider.round:before {
+          border-radius: 50%;
+      }
+      .popover{
+        background: #F1F2F6;
+      }
+      .popover-btn{
+        background: #5352ED !important;
+        color: #ffffff !important;
+        border-radius: 10px;
+        width: 100%
+      }
+      .popover-btn:hover{
+        background: #2524E8 !important;
+        
+      }
+      .popover-input{
+        border-radius: 10px;
+      }
+      .bs-popover-left{
+        margin-right: 0px;
+      }
+      .popover .arrow{
+        display: none !important;
+      }
+      .popover-close{
+        background-color: #5352ED;
+        color: white;
+        border-radius: 50%;
+      }
+      .popover-close:hover{
+        background-color: white;
+        color: #5352ED;
+      }
+    </style>
+  </head>
+  <body class="hold-transition ">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header top-nav navbar navbar-expand navbar-white navbar-light set-nav-margin">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <!-- Brand Logo -->
+          <li class="nav-item">
+            <a class="brand-link" data-widget="pushmenu" href="#">
+            <img src="../../dist/img/logo-new.png"
+              alt="AdminLTE Logo"
+              >
+            </a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block addnewtop">
+            <a href="dashboard.html" class="nav-link fontnew-nav">Dashboard</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="buy-list.html" class="nav-link active fontnew-nav">Buy<hr class="hrcls"></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="earning.html" class="nav-link fontnew-nav">Earnings</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="payment-history.html" class="nav-link fontnew-nav">Payment History</a>
+          </li>
+        </ul>
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Notifications Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link fontnew"  href="catalog.html">
+             <img src="../../dist/img/sign-out-icon.png" class="sign-out-icon">
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link  fontnew margin-right-setting"  href="setting.html">
+            <i class="fa  fa-cog"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+      <div class="content-wrapper mt-5 bg-white">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <!-- /.col -->
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <div class="content mt-5">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- /.card -->
+                <div class="card">
+                  <!-- /.col -->
+                  <div class="card-header p-2 border-bottom-0">
+                    <ul class="nav nav-pills">
+                      <li class="nav-item pill-1">
+                        <a class="nav-link link-1 active text-lg" href="#activity" data-toggle="tab">Buys
+                          <hr id="link-1" class="hrcls">
+                        </a>
+                      </li>
+                      <li class="nav-item pill-2">
+                        <a class="nav-link link-2 text-lg" href="#timeline" data-toggle="tab">Watches
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <div class="tab-content">
+                      <div class="active tab-pane" id="activity">
+                        <p class="card-text p-text-color">Place any ASIN into the textbox and click the buy <br> button to earn and track your buys.</p>
+                        <div class="form-row">
+                          <span class="form-group col-md-4">
+                          <input type="text" class="from-input-inside form-control"  id="pass" placeholder="Enter Asin"> 
+                          </span>
+                          <span class="ml-2 changebutton">
+                          <button class="btn custbtn waves-effect waves-light" type="submit" id="new-pass-filed">Buy</button>
+                          </span>
+                        </div>
+                        <!-- Post -->
+                        <div class="card-body table-responsive p-0">
+                          <form class="m-3 form-inline justify-content-lg-around">
+                            <span class="mr-2">
+                              <span class="mr-2 opecity-add select-btn">Select All</span>
+                              <span class="ml-2"><i class="fa fa-trash text-danger" aria-hidden="true"></i></span>
+                            </span> 
+                            <label for="inputPassword6" class="opecity-add">Show</label>
+                            <select id="inputState" class="form-control bg-lightgy">
+                              <option selected>25 </option>
+                              <option value="1">50 </option>
+                              <option value="2">100 </option>
+                              <option value="2">200 </option>
+                            </select>
+                            <label for="inputState" class="opecity-add">Duration</label>
+                            <select id="inputState" class="form-control bg-lightgy">
+                              <option selected>Last 7 days</option>
+                              <option value="1">Date Range</option>
+                              <option value="2">Last 7 days</option>
+                              <option value="3">This Week</option>
+                              <option value="4">Last Month</option>
+                              <option value="5">This Month</option>
+                              <option value="6">Custom</option>
+                            </select>
+                            <label for="inputState" class="opecity-add">Search</label>
+                            <input type="text" class="pr-4 form-control bg-lightgy"  id="pass" placeholder="Search...."> 
+                          </form>
+                          <table id="" class="table w-100 nowrap table-hover no-footer dataTable example"data-page-length="5" >
+                            <thead>
+                              <tr  class="table-headcolor">
+                                <th class=""><input type="checkbox" name="check1" id="cb-bulk" class="cb-tab"></th>
+                                <th class=""></th>
+                                <th class="">Product Title</th>
+                                <th class=" text-right" data-orderable="false">Date</th>
+                                <th class=" text-right">Asin</th>
+                                <th class=" text-right">Buy Price</th>
+                                <th class=" text-right">Current Price</th>
+                                <th class=" text-right">Trend</th>
+                                <th class=" text-right">Buy</th>
+                                <th class=" text-right">Notify</th>
+                                <th class=" text-right"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr id='buy-1'>
+                                <td><input type="checkbox" id='buy-1-check' onchange="rowEffect(this.id)" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07,  2019</td>
+                                <td class="text-right">#SK2540</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          id='buy-1-editBtn'
+                                          hidden = true
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button id='buy-1-delBtn' class="btn text-danger" hidden = true type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-2'>
+                                <td><input type="checkbox" id='buy-2-check' onchange="rowEffect(this.id)" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07,  2019</td>
+                                <td class="text-right">#SK2540</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          id='buy-2-editBtn'
+                                          hidden = true
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button id='buy-2-delBtn' class="btn text-danger" hidden = true type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-3'>
+                                <td><input type="checkbox" id='buy-3-check' onchange="rowEffect(this.id)" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07,  2019</td>
+                                <td class="text-right">#SK2540</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          id='buy-3-editBtn'
+                                          hidden = true
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-down font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button id='buy-3-delBtn' class="btn text-danger" hidden = true type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-4'>
+                                <td><input type="checkbox" id='buy-4-check' onchange="rowEffect(this.id)" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07,  2019</td>
+                                <td class="text-right">#SK2540</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          id='buy-4-editBtn'
+                                          hidden = true
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button id='buy-4-delBtn' class="btn text-danger" hidden = true type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-5'>
+                                <td><input type="checkbox" id='buy-5-check' onchange="rowEffect(this.id)" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07,  2019</td>
+                                <td class="text-right">#SK2540</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          id='buy-5-editBtn'
+                                          hidden = true
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button id='buy-5-delBtn' class="btn text-danger" hidden = true type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-6'>
+                                <td><input type="checkbox" id='buy-6-check' onchange="rowEffect(this.id)" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07,  2019</td>
+                                <td class="text-right">#SK2540</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          id='buy-6-editBtn'
+                                          hidden = true
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-down font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button id='buy-6-delBtn' class="btn text-danger" hidden = true type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-7'>
+                                <td><input type="checkbox" id='buy-7-check' onchange="rowEffect(this.id)" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07,  2019</td>
+                                <td class="text-right">#SK2540</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          id='buy-7-editBtn'
+                                          hidden = true
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button id='buy-7-delBtn' class="btn text-danger" hidden = true type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-8'>
+                                <td><input type="checkbox" id='buy-8-check' onchange="rowEffect(this.id)" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07,  2019</td>
+                                <td class="text-right">#SK2540</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          id='buy-8-editBtn'
+                                          hidden = true
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-down font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button id='buy-8-delBtn' class="btn text-danger" hidden = true type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <!-- /.tab-pane -->
+                      <div class="tab-pane" id="timeline">
+                        <p class="card-text p-text-color">Enter ASIN or URL of products <br> You'd like to track</p>
+                        <div class="form-row">
+                          <span class="form-group col-md-4">
+                          <input type="text" class="from-input-inside form-control"  id="pass" placeholder="Enter Asin"> 
+                          </span>
+                          <span class="ml-2 changebutton">
+                          <button class="btn custbtn waves-effect waves-light" type="submit" id="new-pass-filed">Watches</button>
+                          </span>
+                        </div>
+                        <!-- The timeline -->
+                        <!-- Post -->
+                        <div class="card-body table-responsive p-0">
+                          <form class="m-3 form-inline justify-content-lg-around">
+                            <span class="mr-2">
+                              <span class="mr-2 opecity-add select-btn">Select All</span>
+                              <span class="ml-2"><i class="fa fa-trash text-danger" aria-hidden="true"></i></span>
+                            </span> 
+                            <label for="inputPassword6" class="opecity-add">Show</label>
+                            <select id="inputState" class="form-control bg-lightgy">
+                              <option selected>25 </option>
+                              <option value="1">50 </option>
+                              <option value="2">100 </option>
+                              <option value="2">200 </option>
+                            </select>
+                            <label for="inputState" class="opecity-add">Duration</label>
+                            <select id="inputState" class="form-control bg-lightgy">
+                              <option selected>Last 7 days</option>
+                              <option value="1">Date Range</option>
+                              <option value="2">Last 7 days</option>
+                              <option value="3">This Week</option>
+                              <option value="4">Last Month</option>
+                              <option value="5">This Month</option>
+                              <option value="6">Custom</option>
+                            </select>
+                            <label for="inputState" class="opecity-add">Search</label>
+                            <input type="text" class="pr-4 from-input-inside form-control bg-lightgy"  id="pass" placeholder="Search...."> 
+                          </form>
+                          <table id="" class="table w-100 nowrap table-hover no-footer dataTable example"data-page-length="5" >
+                            <thead>
+                              <tr  class="table-headcolor">
+                                <th class=""><input type="checkbox" name="check1" id="cb-bulk" class="cb-tab"></th>
+                                <th class=""></th>
+                                <th class="">Product Title</th>
+                                <th class=" text-right" data-orderable="false">Date</th>
+                                <th class=" text-right">Latest Price</th>
+                                <th class=" text-right">Trend</th>
+                                <th class=" text-right">Set Price</th>
+                                <th class=" text-right">Buy</th>
+                                <th class=" text-right">Notify</th>
+                                <th class=" text-right"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr id='buy-1'>
+                                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07, 2019</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn text-danger" type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-2'>
+                                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07, 2019</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn text-danger" type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-3'>
+                                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07, 2019</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn text-danger" type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-4'>
+                                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07, 2019</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn text-danger" type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                              <tr id='buy-5'>
+                                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">Oct 07, 2019</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  <span>
+                                  <i class="fa fa-long-arrow-up font-color-size"></i> 25 %
+                                  </span>
+                                </td>
+                                <td class="text-right">
+                                  $420
+                                  <button class="btn edit-current-price edit-btn-color" 
+                                          type="button"
+                                          data-toggle="popover">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
+                                  </button>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                                <td class="text-right">
+                                  <label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slider round"></span>
+                                  </label>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn text-danger" type="submit" id=""><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card -->
+              </div>
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <footer class="mt-5">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light set-nav-footer">
+              <strong class="footer-text">©️ 2020 Copyright PriceDropd</strong>
+              <div class="collapse show navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto ">
+                  <li class="nav-item ">
+                    <a class="nav-link " href="#">About </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Terms</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Privacy Policy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </footer>
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <!-- data table js -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+      $('.example').dataTable( {
+          "searching": false,
+          "paging":   true,
+          "ordering": false,
+          "info":     false,
+          "lengthChange": false,
+           "language":{
+      "paginate": {
+        "next": '<i class="fas fa-angle-right"></i>',
+        "previous": '<i class="fas fa-angle-left"></i>'  
+      }
+      }
+      } );
+      
+           $(document).on("click", "#cb-bulk", function(){
+            $(".cb-single").prop("checked", $(this).prop("checked"));
+           });
+           $(document).on("click", ".cb-single", function(){
+            var all = $(".cb-single").length;
+            var checked = $(".cb-single:checked").length;
+            if(all == checked){
+              $("#cb-bulk").prop("checked", true);
+            }else{
+              $("#cb-bulk").prop("checked", false);
+            } 
+           });
+          
+          // toggle underline between buys and watches nav-pills
+          $(document).ready(function(){
+
+            $(".pill-2 .link-2").click(function(){
+              $("#link-1").remove();
+              if($('#link-2').hasClass('hrcls')){
+                return false;
+              }
+              else{
+                $(".link-2").append("<hr id='link-2' class='hrcls'>")
+              }
+            });
+
+            $(".pill-1 .link-1").click(function(){
+              $("#link-2").remove();
+              if($('#link-1').hasClass('hrcls')){
+                return false;
+              }
+              else{
+                $(".link-1").append("<hr id='link-1' class='hrcls'>")
+              }  
+            });
+
+            //Pop-Over to change current price
+            
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+              container: 'body',
+              html: true,
+              placement: 'left',
+              sanitize: false,
+              content: 
+                  `<div id="PopoverContent">
+                    <div class="text-right mt-2 mb-3">
+                      <span class="popover-close">
+                        <i class="m-1 fa fa-times"></i>
+                      </span>
+                    </div>
+                    <h6 class=" mb-4">Set a price drop alert and get notified when it hits your price.</h6>
+                    <div class="">
+                      <div>
+                        <input type="text" class="form-control popover-input" placeholder="$ 0.00">
+                      </div>
+                      <div class="mt-3 text-center">
+                        <button class="btn popover-btn waves-effect waves-light">
+                          <span class="ml-4 mr-4">Set Price</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>`
+            })
+            $(document).on("click", ".popover .popover-close" , function(){
+                $(this).parents(".popover").popover('hide');
+            });
+        });
+        $('body').on('click', function (e) {
+            $('[data-toggle="popover"]').each(function () {
+                //the 'is' for buttons that trigger popups
+                //the 'has' for icons within a button that triggers a popup
+                if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                    $(this).popover('hide');
+                }
+            });
+        });
+    })
+
+          //row effect change on checkbox check/uncheck
+          function rowEffect(id){
+            console.log(id);
+            let idArr = id.split('-');
+            let rowId = idArr[0] + '-' + idArr[1];
+            let editBtnId = idArr[0] + '-' + idArr[1] + '-editBtn';
+            let delBtnId = idArr[0] + '-' + idArr[1] +'-delBtn'
+            console.log(rowId);
+            let checkBoxElement = document.getElementById(id);
+            if(checkBoxElement.checked == true){
+              document.getElementById(rowId).style.color = '#5352ED';
+              document.getElementById(editBtnId).hidden = false;
+              document.getElementById(delBtnId).hidden = false;
+            }
+            else{
+              document.getElementById(rowId).style.color = '#212529';
+              document.getElementById(editBtnId).hidden = true;
+              document.getElementById(delBtnId).hidden = true;
+            }
+          }
+
+          // click select all button to check all the rows of table
+          // function checkAllBtn(){
+
+          // }
+    </script>
+  </body>
+</html>

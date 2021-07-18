@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Payment History | PriceDropd</title>
+      <!-- Tell the browser to be responsive to screen width -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- overlayScrollbars -->
+       <link rel="stylesheet" type="text/css" href="../../dist/css/jquery.dataTables.min.css">
+      <link rel="stylesheet" href="../../dist/css/adminlte.css">
+      <link rel="stylesheet" type="text/css" href="../../dist/css/style.css">
+      <!-- Google Font: Source Sans Pro -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <style type="text/css">
+        .view_btn {
+          color: #5352ED;
+          cursor: pointer;
+        }
+      </style>
+
+   </head>
+   <body class="hold-transition ">
+      <!-- Site wrapper -->
+      <div class="wrapper">
+         <!-- Navbar -->
+         <nav class="main-header navbar top-nav navbar-expand navbar-white navbar-light set-nav-margin">
+          <!-- Left navbar links -->
+          <ul class="navbar-nav">
+             <!-- Brand Logo -->
+             <li class="nav-item">
+                <a class="brand-link" data-widget="pushmenu" href="#">
+                <img src="../../dist/img/logo-new.png"
+                   alt="AdminLTE Logo"
+                   >
+                </a>
+             </li>
+             <li class="nav-item d-none d-sm-inline-block addnewtop">
+                <a href="dashboard.html" class="nav-link fontnew-nav">Dashboard</a>
+             </li>
+             <li class="nav-item d-none d-sm-inline-block">
+                <a href="buy-list.html" class="nav-link fontnew-nav">Buy </a>
+             </li>
+             <li class="nav-item d-none d-sm-inline-block">
+                <a href="earning.html" class="nav-link fontnew-nav">Earnings</a>
+             </li>
+             <li class="nav-item d-none d-sm-inline-block">
+                <a href="payment-history.html" class="nav-link active fontnew-nav">Payment History<hr class="hrcls"></a>
+             </li>
+          </ul>
+          <!-- Right navbar links -->
+          <ul class="navbar-nav ml-auto">
+             <!-- Notifications Dropdown Menu -->
+             <li class="nav-item dropdown">
+                <a class="nav-link fontnew"  href="catalog.html">
+                <img src="../../dist/img/sign-out-icon.png" class="sign-out-icon">
+                </a>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link  fontnew margin-right-setting"  href="setting.html">
+                <i class="fa fa-cog"></i>
+                </a>
+             </li>
+          </ul>
+       </nav>
+         <!-- /.navbar -->
+         <div class="content-wrapper bg-white mt-5">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+               <div class="container-fluid">
+                  <div class="row mb-2">
+                     <!-- /.col -->
+                     <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+               </div>
+               <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <div class="content mt-5">
+               <div class="container-fluid">
+                  <div class="row">
+                     
+                     <!-- /.col-md-6 -->
+                     <div class="col-lg-12">
+                        <div class="card">
+                          <!--  -->
+                             <div class="card-body table-responsive">
+                <table id="" class="table w-100 nowrap  table-hover no-footer dataTable example"data-page-length="5" >
+                  <thead class="text-right">
+                  <tr>
+                    <th class="text-muted"><input name="select_all" value="1" type="checkbox"></th>
+                    <th class="text-muted">Pay Date</th>
+                    <th class="text-muted">Earnings Period</th>
+                    <th class="text-muted">Amount</th>
+                    <th class="text-muted">Payment Type</th>
+                    <th class="text-muted">Status</th>
+                  </tr>
+                  </thead>
+                  <tbody class="table-headcolor text-right">
+                  <tr>
+                    <td><input type="checkbox" name="name1" /></td>
+                    <td>Nov 07, 2019</td>
+                    <td>
+                      Oct 07, 2019 - Nov 07, 2019</td>
+                    <td>$400</td>
+                    <td>Check</td>
+                    <td>
+                      <span class="font-weight-bold text-success">Paid</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="name1" /></td>
+                    <td>Dec 07, 2019</td>
+                    <td>
+                      Nov 07, 2019 - Dec 07, 2019</td>
+                    <td>$550</td>
+                    <td>Venmo</td>
+                    <td>
+                      <span class="font-weight-bold text-danger">Pending</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="name1" /></td>
+                    <td>Jan 07, 2019</td>
+                    <td>
+                      Dec 07, 2019 - Jan 07, 2019</td>
+                    <td>$600</td>
+                    <td>Check</td>
+                    <td>
+                      <span class="font-weight-bold text-danger">Pending</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="name1" /></td>
+                    <td>Feb 07, 2019</td>
+                    <td>
+                      Jan 07, 2019 - Feb 07, 2019</td>
+                    <td>$500</td>
+                    <td>Paypal</td>
+                    <td>
+                      <span class="font-weight-bold text-success">Paid</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="name1" /></td>
+                    <td>Mar 07, 2019</td>
+                    <td>
+                      Feb 07, 2019 - Mar 07, 2019</td>
+                    <td>$490</td>
+                    <td>Check</td>
+                    <td>
+                      <span class="font-weight-bold text-danger">Pending</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="name1" /></td>
+                    <td>Apr 07, 2019</td>
+                    <td>
+                      Mar 07, 2019 - Apr 07, 2019</td>
+                    <td>$900</td>
+                    <td>Venmo</td>
+                    <td>
+                      <span class="font-weight-bold text-success">Paid</span>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+                        </div>
+                     </div>
+                     <!-- /.col-md-6 -->
+                  </div>
+                  <!-- /.row -->
+                  <span class="view_btn">View All <i class="fas fa-arrow-right"></i></span>
+               </div>
+               <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+         </div>
+         <!-- /.content-wrapper -->
+         <!-- Control Sidebar -->
+         <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+         </aside>
+         <footer class="mt-5">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light  set-nav-footer">
+              <strong class="footer-text">©️ 2020 Copyright PriceDropd</strong>
+              <div class="collapse show navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto ">
+                  <li class="nav-item ">
+                    <a class="nav-link " href="#">About </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Terms</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Privacy Policy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </footer>
+         <!-- Control Sidebar -->
+         <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+         </aside>
+         <!-- /.control-sidebar -->
+      </div>
+      <!-- ./wrapper -->
+      <!-- jQuery -->
+      <script src="../../plugins/jquery/jquery.min.js"></script>
+      <!-- Bootstrap 4 -->
+      <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- AdminLTE App -->
+      <script src="../../dist/js/adminlte.min.js"></script>
+      <!-- AdminLTE for demo purposes -->
+      <script src="../../dist/js/demo.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+       <!-- data table js -->
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $('.example').dataTable( {
+        "searching": false,
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "lengthChange": false,
+         "language":{
+    "paginate": {
+        "next": '<i class="fas fa-angle-right"></i>',
+        "previous": '<i class="fas fa-angle-left"></i>'  
+      }
+  }
+} );
+
+         $(document).on("click", "#cb-bulk", function(){
+          $(".cb-single").prop("checked", $(this).prop("checked"));
+         });
+         $(document).on("click", ".cb-single", function(){
+          var all = $(".cb-single").length;
+          var checked = $(".cb-single:checked").length;
+          if(all == checked){
+            $("#cb-bulk").prop("checked", true);
+          }else{
+            $("#cb-bulk").prop("checked", false);
+          } 
+         });
+      </script>
+
+   </body>
+</html>

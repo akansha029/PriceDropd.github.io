@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard | PriceDropd</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" type="text/css" href="../../dist/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../dist/css/adminlte.css">
+    <link rel="stylesheet" type="text/css" href="../../dist/css/style.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        <!-- data table Css -->
+    <link rel="stylesheet" type="text/css" href="cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <!-- data table Css -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+
+      .view_btn {
+            color: #5352ED;
+            cursor: pointer;
+      }
+    </style>
+
+    <script type="text/javascript">
+    </script>
+  </head>
+  <body class="hold-transition ">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header top-nav navbar navbar-expand navbar-white navbar-light set-nav-margin">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <!-- Brand Logo -->
+          <li class="nav-item">
+            <a class="brand-link" data-widget="pushmenu" href="catalog.html">
+            <img src="../../dist/img/logo-new.png"
+              alt="AdminLTE Logo"
+              >
+            </a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block addnewtop">
+            <a href="dashboard.html" class="nav-link active fontnew-nav">Dashboard<hr class="hrcls"></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="buy-list.html" class="nav-link  fontnew-nav">Buy</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="earning.html" class="nav-link fontnew-nav">Earnings</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="payment-history.html" class="nav-link fontnew-nav">Payment History</a>
+          </li>
+        </ul>
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Notifications Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link fontnew"  href="catalog.html">
+             <img src="../../dist/img/sign-out-icon.png" class="sign-out-icon">
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link  fontnew margin-right-setting"  href="setting.html">
+            <i class="fa  fa-cog"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-5">
+              <!-- /.col -->
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <div class="content p-5">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-8">
+                <!-- /.card -->
+                <div class="card">
+                  <!-- /.col -->
+                  <div class="card-header p-2 border-bottom-0">
+                    <ul class="nav nav-pills">
+                      <li class="nav-item pill-1">
+                        <a class="nav-link link-1 active text-lg" href="#activity" data-toggle="tab">Latest Buys
+                          <hr id="link-1" class="hrcls">
+                        </a>
+                      </li>
+                      <li class="nav-item pill-2">
+                        <a class="nav-link link-2 text-lg" href="#timeline" data-toggle="tab">Latest Watches
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <div class="tab-content">
+                      <div class="active tab-pane" id="activity">
+                        <!-- Post -->
+                        <div class="card-body">
+                          <p class="card-text p-text-color">Place any ASIN into the textbox and click the buy <br> button to earn and track your buys</p>
+                          <div class="form-row">
+                            <div class="form-group col-md-8">
+                              <input type="text" class="form-control from-input-inside"  id="pass" placeholder="Enter Asin"> 
+                            </div>
+                            <div class="ml-2 changebutton">
+                              <button class="btn  custbtn  waves-effect waves-light" type="submit" id="new-pass-filed">Buy</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-body table-responsive p-0">
+                          <span class="mr-2 ml-2">
+                            <span class="mr-2 opecity-add select-btn">Select All</span>
+                            <span class="ml-2"><i class="fa fa-trash text-danger" aria-hidden="true"></i></span>
+                          </span>
+                          <table id="" class="table w-100 nowrap mt-3 table-hover no-footer dataTable example"data-page-length="5">
+                            <thead>
+                              <tr class="table-headcolor">
+                                <th class=""><input name="select_all" value="1" type="checkbox"></th>
+                                <th class=""></th>
+                                <th class="">Product Title</th>
+                                <th class=" text-right">Buy Price</th>
+                                <th class=" text-right">Current Price</th>
+                                <th class=" text-right">Buy</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Buy</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="view_btn mt-5">View All <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                      </div>
+                      <!-- /.tab-pane -->
+                      <div class="tab-pane" id="timeline">
+                        <!-- The timeline -->
+                        <div class="card-body">
+                          <p class="card-text p-text-color">Place any ASIN into the textbox and click the buy <br> button to earn and track your watches</p>
+                          <div class="form-row">
+                            <div class="form-group col-md-8">
+                              <input type="text" class="form-control from-input-inside"  id="pass" placeholder="Enter Asin"> 
+                            </div>
+                            <div class="ml-2 changebutton">
+                              <button class="btn  custbtn waves-effect waves-light" type="submit" id="new-pass-filed">Watches</button>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Post -->
+                        <div class="card-body table-responsive p-0">
+                          <span class="mr-2 ml-2">
+                            <span class="mr-2 opecity-add select-btn">Select All</span>
+                            <span class="ml-2"><i class="fa fa-trash text-danger" aria-hidden="true"></i></span>
+                          </span>
+                          <table id="" class="table w-100 nowrap  mt-3 table-hover no-footer dataTable example"data-page-length="5">
+                            <thead>
+                              <tr  class="table-headcolor">
+                                <th class=""><input name="select_all" value="1" type="checkbox"></th>
+                                <th class=""></th>
+                                <th class="">Product Title</th>
+                                <th class=" text-right">Buy Price</th>
+                                <th class=" text-right">Current Price</th>
+                                <th class=" text-right">Buy</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" name="name1" /></td>
+                                <td>
+                                  <img src="../../dist/img/tv.png" alt="Product 1" class=" img-size-32 mr-2">
+                                </td>
+                                <td>Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,..</td>
+                                <td class="text-right">$400</td>
+                                <td class="text-right">
+                                  $300 
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn  btn-default waves-effect waves-light" type="submit" id="">Watches</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="view_btn mt-5">View All <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card -->
+              </div>
+              <!-- /.col-md-6 -->
+              <div class="col-lg-4 card">
+                <div class="">
+                  <div class="card-body">
+                    <div>
+                      <div class="">
+                        <div class="text-muted text-lg">Total Earnings</div>
+                        <div class=" text-lg mt-2">$2,545.16</div>
+                      </div>
+                      <div class="mt-4">
+                        <div class="text-muted text-lg">Total Earning This Period</div>
+                        <div class=" text-lg mt-2">$176.15</div>
+                      </div>
+                    </div>
+                    <div class="view_btn mt-5">View Earnings <i class="fas fa-arrow-right"></i></div>
+                  </div>
+                </div>
+                <!-- /.card -->
+                <div class="card">
+                  <!--  -->
+                  <div class="card-body table-responsive">
+                    <h5 class="mb-3 text-muted">Latest Payments</h5>
+                    <table id="" class="table w-100 nowrap table-hover no-footer dataTable example"data-page-length="5">
+                      <thead>
+                        <tr  class="table-headcolor">
+                          <th class="">Date</th>
+                          <th class=" text-center">Total Payment</th>
+                          <th class=" text-right">Payment Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>07 Oct, 2019</td>
+                          <td class="text-center">
+                            $300 
+                          </td>
+                          <td class="text-right">
+                            <span class="text-success">Paid</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>07 Oct, 2019</td>
+                          <td class="text-center">
+                            $300 
+                          </td>
+                          <td class="text-right">
+                            <span class="text-danger">Pending</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>07 Oct, 2019</td>
+                          <td class="text-center">
+                            $300 
+                          </td>
+                          <td class="text-right">
+                            <span class="text-success">Paid</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>07 Oct, 2019</td>
+                          <td class="text-center">
+                            $300 
+                          </td>
+                          <td class="text-right">
+                            <span class="text-success">Paid</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>07 Oct, 2019</td>
+                          <td class="text-center">
+                            $300 
+                          </td>
+                          <td class="text-right">
+                            <span class="text-danger">Pending</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="view_btn mt-5 mb-5">View All Payments <i class="fas fa-arrow-right"></i></div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-md-6 -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <footer class="mt-5">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light  set-nav-footer">
+          <strong class="footer-text">©️ 2020 Copyright PriceDropd</strong>
+          <div class="collapse show navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto ">
+              <li class="nav-item ">
+                <a class="nav-link " href="#">About </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Terms</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Privacy Policy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </footer>
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <!-- data table js -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+      $('.example').dataTable( {
+          "searching": false,
+          "paging":   false,
+          "ordering": false,
+          "info":     false,
+          "lengthChange": false,
+      //      "language":{
+      // "paginate": {
+      //   "next": '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
+      //   "previous": '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
+      // }
+      // }
+      } );
+      
+           $(document).on("click", "#cb-bulk", function(){
+            $(".cb-single").prop("checked", $(this).prop("checked"));
+           });
+           $(document).on("click", ".cb-single", function(){
+            var all = $(".cb-single").length;
+            var checked = $(".cb-single:checked").length;
+            if(all == checked){
+              $("#cb-bulk").prop("checked", true);
+            }else{
+              $("#cb-bulk").prop("checked", false);
+            } 
+           });
+
+          // toggle underline between buys and watches nav-pills
+            $(".pill-2 .link-2").click(function(){
+              $("#link-1").remove();
+              if($('#link-2').hasClass('hrcls')){
+                return false;
+              }
+              else{
+                $(".link-2").append("<hr id='link-2' class='hrcls'>")
+              }
+            });
+
+            $(".pill-1 .link-1").click(function(){
+              $("#link-2").remove();
+              if($('#link-1').hasClass('hrcls')){
+                return false;
+              }
+              else{
+                $(".link-1").append("<hr id='link-1' class='hrcls'>")
+              }  
+            });
+    </script>
+  </body>
+</html>

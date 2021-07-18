@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Earning | PriceDropd</title>
+      <!-- Tell the browser to be responsive to screen width -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- overlayScrollbars -->
+      <link rel="stylesheet" href="../../dist/css/adminlte.css">
+      
+      <!-- Google Font: Source Sans Pro -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!-- data table Css -->
+
+      <link rel="stylesheet" type="text/css" href="../../dist/css/jquery.dataTables.min.css">
+      <link rel="stylesheet" type="text/css" href="../../dist/css/style.css">
+   </head>
+   <body class="hold-transition ">
+      <!-- Site wrapper -->
+      <div class="wrapper">
+         <!-- Navbar -->
+           <nav class="main-header navbar top-nav navbar-expand navbar-white navbar-light set-nav-margin">
+          <!-- Left navbar links -->
+          <ul class="navbar-nav">
+             <!-- Brand Logo -->
+             <li class="nav-item">
+                <a class="brand-link" data-widget="pushmenu" href="#">
+                <img src="../../dist/img/logo-new.png"
+                   alt="AdminLTE Logo"
+                   >
+                </a>
+             </li>
+             <li class="nav-item d-none d-sm-inline-block addnewtop">
+                <a href="dashboard.html" class="nav-link fontnew-nav">Dashboard</a>
+             </li>
+             <li class="nav-item d-none d-sm-inline-block">
+                <a href="buy-list.html" class="nav-link fontnew-nav">Buy</a>
+             </li>
+             <li class="nav-item d-none d-sm-inline-block">
+                <a href="earning.html" class="nav-link active fontnew-nav">Earnings<hr class="hrcls"></a>
+             </li>
+             <li class="nav-item d-none d-sm-inline-block">
+                <a href="payment-history.html" class="nav-link fontnew-nav">Payment History</a>
+             </li>
+          </ul>
+          <!-- Right navbar links -->
+          <ul class="navbar-nav ml-auto">
+             <!-- Notifications Dropdown Menu -->
+             <li class="nav-item dropdown">
+                <a class="nav-link fontnew"  href="catalog.html">
+                <img src="../../dist/img/sign-out-icon.png" class="sign-out-icon">
+                </a>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link  fontnew margin-right-setting"  href="setting.html">
+                <i class="fa  fa-cog"></i>
+                </a>
+             </li>
+          </ul>
+       </nav>
+         <!-- /.navbar -->
+         <div class="content-wrapper mt-5">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+               <div class="container-fluid">
+                  <div class="row mb-2">
+                     <!-- /.col -->
+                     <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+               </div>
+               <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <div class="content mt-5">
+               <div class="container-fluid">
+                <div class="row">
+          
+          <!-- ./col -->
+          
+        
+          <!-- ./col -->
+        </div>
+                  <div class="row">
+                     <div class="col-lg-12">
+                       <div class="card">
+                        <div class="row">
+                        <div class="col-lg-6 margin-box-left1">
+            <!-- small box -->
+            <div class="small-box bg-small-box">
+              <div class="inner">
+                <div class="d-flex">
+                    <p class="d-flex flex-column d-flex-text-color">
+                      <span class=" earn-box1 mb-2">Total Earned For Period</span>
+                      <span class="earn-box-num-1">07 Oct, 2019 - 07 Nov, 2019</span>
+                       </p>
+                       <p class="ml-auto d-flex flex-column text-right">
+                       <span class=" earn-text-color">$276.84</span>
+                                    
+                        </p>
+                   </div>
+              </div>
+              
+              
+            </div>
+          </div>
+          <div class="col-lg-6 margin-box-both">
+            <!-- small box -->
+            <div class="small-box bg-small-box">
+              <div class="inner">
+                <div class="d-flex">
+                    <p class="d-flex flex-column d-flex-text-color">
+                      <span class=" earn-box1 mb-2">Total Earnings - Date</span>
+                      <span class="earn-box-num-1">07 Oct, 2019 - 07 Jul, 2020</span>
+                       </p>
+                       <p class="ml-auto d-flex flex-column text-right">
+                       <span class="earn-text-color">$3,456.18</span>
+                                    
+                        </p>
+                   </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                           <div class="card-body">
+                            
+                             <form class="form-inline float-right mb-4">
+                                    <div class="form-group">
+                                       <label for="inputPassword6" class="mr-3 opecity-add">Month</label>
+                                       <select id="inputState" class="form-control bg-lightgy">
+                                          <option selected>Select Month </option>
+                                          <option value="1">Highest  To Lowest </option>
+                                          <option value="2">.....</option>
+                                          <option value="3">.....</option>
+                                          <option value="4">.....</option>
+                                          <option value="5">.....</option>
+                                          <option value="6">.....</option>
+                                       </select>
+                                    </div>
+                                 </form>
+                                    
+                             <table id="example" class="table w-100 nowrap  table-hover no-footer dataTable"data-page-length="5" >
+
+        <thead class="table-headcolor">
+            <tr> 
+                <th class="text-muted"><input type="checkbox" name="check1" id="cb-bulk" class="cb-tab"></th>
+                <th class="text-muted text-center">Product Title</th>
+                <th class="text-right" data-orderable="false">Date</th>
+                <th class="text-muted text-right">Asin</th>
+                <th class="text-muted text-right">Quantity</th>
+                <th class="text-muted text-right">Total</th>
+                <th class="text-muted text-right">Commission (%)</th>
+                <th class="text-muted text-right">Earnings</th>
+            </tr>
+        </thead>
+       
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check[]" class="cb-single"></td>
+                <td class="text-center">Apple MacBook Pro (16-inch, <br> 16GB RAM, 512GB Storage,.. </td>
+                <td class="text-right">Oct 07, 2019</td>
+                <td class="text-right">#SK2540</td>
+                <td class="text-right">8</td>
+                <td class="text-right">$400</td>
+                <td class="text-right">10%</td>
+                <td class="text-right">$400</td>
+            </tr>
+        </tbody>
+    </table>
+                           </div>
+                        </div>
+                     </div>
+                    
+                     
+                  </div>
+                  <!-- /.row -->
+               </div>
+               <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+         </div>
+         <!-- /.content-wrapper -->
+         <!-- Control Sidebar -->
+         <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+         </aside>
+         <footer class="mt-5">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light  set-nav-footer">
+              <strong class="footer-text">©️ 2020 Copyright PriceDropd</strong>
+              <div class="collapse show navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto ">
+                  <li class="nav-item ">
+                    <a class="nav-link " href="#">About </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Terms</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Privacy Policy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </footer>
+         <!-- Control Sidebar -->
+         <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+         </aside>
+         <!-- /.control-sidebar -->
+      </div>
+      <!-- ./wrapper -->
+      <!-- jQuery -->
+      <script src="../../plugins/jquery/jquery.min.js"></script>
+      <!-- Bootstrap 4 -->
+      <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- AdminLTE App -->
+      <script src="../../dist/js/adminlte.min.js"></script>
+      <!-- AdminLTE for demo purposes -->
+      <script src="../../dist/js/demo.js"></script>
+      <!-- data table js -->
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $('#example').dataTable( {
+        "searching": false,
+        "paging":   true,
+        "ordering": false,
+        "info":     false,
+        "lengthChange": false,
+         "language":{
+    "paginate": {
+        "next": '<i class="fas fa-angle-right"></i>',
+        "previous": '<i class="fas fa-angle-left"></i>'  
+      }
+  }
+} );
+
+         $(document).on("click", "#cb-bulk", function(){
+          $(".cb-single").prop("checked", $(this).prop("checked"));
+         });
+         $(document).on("click", ".cb-single", function(){
+          var all = $(".cb-single").length;
+          var checked = $(".cb-single:checked").length;
+          if(all == checked){
+            $("#cb-bulk").prop("checked", true);
+          }else{
+            $("#cb-bulk").prop("checked", false);
+          } 
+         });
+      </script>
+
+   </body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Setting | PriceDropd</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.css">
+ <link rel="stylesheet" type="text/css" href="../../dist/css/style.css"> 
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="hold-transition ">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header top-nav navbar navbar-expand navbar-white navbar-light set-nav-margin">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+               <!-- Brand Logo -->
+               <li class="nav-item">
+                  <a class="brand-link" data-widget="pushmenu" href="#">
+                  <img src="../../dist/img/logo-new.png"
+                     alt="AdminLTE Logo"
+                     >
+                  </a>
+               </li>
+               <li class="nav-item d-none d-sm-inline-block addnewtop">
+                  <a href="dashboard.html" class="nav-link fontnew-nav">Dashboard</a>
+               </li>
+               <li class="nav-item d-none d-sm-inline-block">
+                  <a href="buy-list.html" class="nav-link fontnew-nav">Buy </a>
+               </li>
+               <li class="nav-item d-none d-sm-inline-block">
+                  <a href="earning.html" class="nav-link fontnew-nav">Earning</a>
+               </li>
+               <li class="nav-item d-none d-sm-inline-block">
+                  <a href="payment-history.html" class="nav-link fontnew-nav">Payment History</a>
+               </li>
+            </ul>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+               <!-- Notifications Dropdown Menu -->
+               <li class="nav-item dropdown">
+                  <a class="nav-link fontnew"  href="catalog.html">
+                 <img src="../../dist/img/sign-out-icon.png" class="sign-out-icon">
+                  </a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link  fontnew margin-right-setting"  href="setting.html">
+                  <i class="fa  fa-cog"></i>
+                  </a>
+               </li>
+            </ul>
+         </nav>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper mt-5 bg-white">
+            <!-- Content Header (Page header) -->
+          
+            <!-- /.content-header -->
+            <!-- Main content -->
+           
+               <div class="container-fluid mt-5">
+                  <div class="mt-5 row justify-content-md-center">
+
+                     <div class="col-md-8 ">
+                  <div class="card new-card">
+                     <div class="card-header mt-5 p-2 new-headercrt">
+                        <ul class="nav nav-pills">
+                           <li class="nav-item pill-1"><a class="nav-link link-1 active nav-addfonts" href="#activity" data-toggle="tab">Payee Info <hr id="link-1" class="hrcls"> </a></li>
+                           <li class="nav-item pill-2"><a class="nav-link link-2 nav-addfonts"  href="#settings" data-toggle="tab">Account Information</a></li>
+                        </ul>
+                     </div>
+                     <!-- /.card-header -->
+                     <div class="card-body shift-box-left">
+                        <div class="tab-content">
+                           <div class="active tab-pane" id="activity">
+                              
+                              <!-- Date dd/mm/yyyy -->
+                              <div class="form-group">
+                                 <label>How would you like to be paid?</label>
+                                 <div class="form-check">
+                                    <input class="form-check-input cir-margin" type="radio" id="radiobtn1" name="radio2" value="check">
+                                    <label class="form-check-label">Check</label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input class="form-check-input cir-margin" type="radio" name="radio2" value="paypal">
+                                    <label class="form-check-label">Paypal</label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input class="form-check-input cir-margin" type="radio" name="radio2" value="zella">
+                                    <label class="form-check-label">Zelle</label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input class="form-check-input cir-margin" type="radio" name="radio2" value="venmo">
+                                    <label class="form-check-label">Venmo</label>
+                                 </div>
+                              </div>
+                              <!-- form 1 Start -->
+                              <form class="form-horizontal" id="form1" >
+                                 <div class="form-group col-md-6">
+                                    <label for="username">Payee Name</label>
+                                    <input type="text" class="from-input-inside form-control" id="payeename" placeholder="Enter Payee Name">
+                                 </div>
+                                 <div class="form-group col-md-6">
+                                    <label for="username">Address line 1</label>
+                                    <input type="text" class="from-input-inside form-control" id="add1" placeholder="Enter Address">
+                                 </div>
+                                 <div class="form-group col-md-6">
+                                    <label for="username">Address line 2</label>
+                                    <input type="password" class="from-input-inside form-control" id="add2" placeholder="Enter Address">
+                                 </div>
+                                 
+                                    <div class="form-group col-md-6">
+                                       <label for="inputCity">City</label>
+                                       <input type="text" class="from-input-inside form-control" id="inputCity" placeholder="Enter City">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                       <label for="inputState">State</label>
+                                       <select id="inputState" class="from-input-inside form-control">
+                                          <option selected>Select State</option>
+                                          <option>...</option>
+                                       </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                       <label for="inputZip">Zip</label>
+                                       <input type="text" class="from-input-inside form-control" id="inputZip" placeholder="Zip Code">
+                                    </div>
+                                    <div class="mt-5 col-md-6">
+                                       <button class="btn custbtn  col-md-12 waves-effect waves-light" type="submit">Save</button>
+                                    </div>
+                                 
+                              </form>
+                              <!-- form 1 End -->
+                              <form class="form-horizontal" id="form2">
+                                 <div class="form-group col-md-6">
+                                    <label for="paypal">Paypal ID</label>
+                                    <input type="text" class="from-input-inside form-control" id="paypal" placeholder="Enter Paypal ID">        
+                                 </div>
+                                 <div class="mt-5 col-md-6">
+                                    <button class="btn custbtn col-md-12  waves-effect waves-light" type="submit">Save</button>
+                                 </div>
+                              </form>
+                              <!-- form 2 end -->
+                              <!-- form 3 start -->
+                              <form class="form-horizontal" id="form3">
+                                
+                                    <div class="form-group col-md-6">
+                                       <label for="username">Zelle</label>
+                                       <input type="text" class="from-input-inside form-control" id="fullname" placeholder="Enter Zelle ID">        
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                       <label for="username">Email/Phone</label>
+                                       <input type="text" class="from-input-inside form-control" id="pass" placeholder="Enter Password">        
+                                    </div>
+                                 
+                                 <div class="mt-5 col-md-6">
+                                    <button class="btn custbtn col-md-12  waves-effect waves-light" type="submit">Save</button>
+                                 </div>
+                              </form>
+                              <!-- form 3 end -->
+                              <!--  form 4 start -->
+                              <form class="form-horizontal" id="form4">
+                                 <div class="form-group col-md-6">
+                                    <label for="paypal">Venmo ID</label>
+                                    <input type="text" class="from-input-inside form-control" id="paypal" placeholder="Enter Venmo ID">        
+                                 </div>
+                                 <div class="mt-5 col-md-6">
+                                    <button class="btn custbtn col-md-12  waves-effect waves-light" type="submit">Save</button>
+                                 </div>
+                              </form>
+                              <!-- /.form group -->
+                              <!-- /.card-body -->
+                           </div>
+                           <!-- /.tab-pane -->
+                           <div class="tab-pane" id="settings">
+                              
+                              <form class="form-horizontal" >
+                                 <div class="form-group col-md-6">
+                                    <label for="fname">Full Name</label>
+                                    <input type="text" class="from-input-inside form-control" id="fname" placeholder="Enter First Name">        
+                                 </div>
+                                 
+                                 <div class="form-group col-md-6">
+                                    <label for="useremail">Email</label>
+                                    <input type="email" class="from-input-inside form-control" id="useremail" placeholder="Enter Email">        
+                                 </div>
+                                 <div class="form-row">
+                                    <div class="form-group col-md-6 ml-2">
+
+                                       <label for="pass">Password</label>
+                                       <input type="password" class="from-input-inside form-control"  id="password-field" value ="xyz123"> 
+                                       <span toggle="#password-field" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
+                                    </div>
+                                    <div class="ml-2 changebutton">
+                                       <button class="btn btntextcolor" type="button" id="new-pass-filed" style="margin-top: 39px;">Change Password</button>
+                                    </div>
+                                 </div>
+                                 
+                                 <div class="chng-pass-hide mt-3" >
+                                    <p class="head-text1">Change Password</p>
+                                    <div class="form-group col-md-6">
+                                       <label for="newpassword">New Password</label>
+                                       <input type="password" class="from-input-inside form-control" id="newpassword" value ="xyz1234"> 
+                                        <span toggle="#newpassword" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>       
+                                    </div>
+                                     <div class="form-group col-md-6">
+                                       <label for="confrmpassword">Confirm Password</label>
+                                       <input type="password" class="from-input-inside form-control" id="conpassword" value ="xyz1234">
+                                       <span toggle="#conpassword" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>         
+                                    </div>
+                                 </div>
+                                 <div class="mt-5 col-md-6">
+                                    <button class="btn custbtn col-md-12 waves-effect waves-light" type="submit">Save</button>
+                                 </div>
+                              </form>
+                           </div>
+                           <!-- /.tab-pane -->
+                        </div>
+                        <!-- /.tab-content -->
+                     </div>
+                     <!-- /.card-body -->
+                  </div>
+                  <!-- /.nav-tabs-custom -->
+               </div>
+                     
+                  </div>
+                  <!-- /.row -->
+               </div>
+               <!-- /.container-fluid -->
+            
+         </div>
+         <!-- /.content-wrapper -->
+  <!-- /.content-wrapper -->
+
+  <footer class="mt-5">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light  set-nav-footer">
+      <strong class="footer-text">©️ 2020 Copyright PriceDropd</strong>
+      <div class="collapse show navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto ">
+          <li class="nav-item ">
+            <a class="nav-link " href="#">About </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Terms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Privacy Policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+  <script type="text/javascript">
+         $('input:radio[name="radio2"]').change(
+         function(){
+              
+             if ($(this).is(':checked') && $(this).val() == 'check') {
+                 $('#form1').show();
+             }else{
+                $('#form1').hide();
+             }
+             if ($(this).is(':checked') && $(this).val() == 'paypal') {
+                $('#form2').show();
+             }else{
+                $('#form2').hide();
+             }
+             if ($(this).is(':checked') && $(this).val() == 'zella') {
+                 $('#form3').show();
+             }else{
+                $('#form3').hide();
+             }
+             if ($(this).is(':checked') && $(this).val() == 'venmo') {
+                 $('#form4').show();
+             }else{
+                $('#form4').hide();
+             }
+         });
+          $(document).ready(function(){
+             $('#form1').hide();
+             $('#form2').hide();
+             $('#form3').hide();
+             $('#form4').hide();
+         
+           });
+          
+         $(document).ready(function(){
+          $(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye-slash fa-eye");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+             $('.chng-pass-hide').hide();
+             $("#new-pass-filed").click(function() {
+                   $(".chng-pass-hide").show();
+               });
+             // $("#hr-show-hide").click(function() {
+             //       $('.hr-show').html('<hr class="hr-cls">');
+             //   });
+           });
+         
+         $(document).ready(function(){
+
+            $(".pill-2 .link-2").click(function(){
+              $("#link-1").remove();
+              if($('#link-2').hasClass('hrcls')){
+                return false;
+              }
+              else{
+                $(".link-2").append("<hr id='link-2' class='hrcls'>")
+              }
+            });
+
+            $(".pill-1 .link-1").click(function(){
+              $("#link-2").remove();
+              if($('#link-1').hasClass('hrcls')){
+                return false;
+              }
+              else{
+                $(".link-1").append("<hr id='link-1' class='hrcls'>")
+              }  
+            });
+          })
+      </script>
+</body>
+</html>

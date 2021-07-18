@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Catalog | PriceDropd</title>
+      <!-- Tell the browser to be responsive to screen width -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- Ion Slider -->
+      <link rel="stylesheet" href="../../plugins/ion-rangeslider/css/ion.rangeSlider.css">
+      <!-- overlayScrollbars -->
+      <link rel="stylesheet" href="../../dist/css/adminlte.css">
+      <link rel="stylesheet" type="text/css" href="../../dist/css/style.css">
+      <!-- Google Font: Source Sans Pro -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Bootstrap CSS CDN -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+      <!-- Our Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="../../dist/css/collapse1.css">
+      <!-- Font Awesome JS -->
+      <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"></script>
+
+      <style type="text/css">
+        
+         .form-control:focus {
+             outline: 0 !important;
+             border-color: initial;
+             box-shadow: none;
+         }
+         .search-btn {
+            color: #5352ED !important;
+            border: none;
+            cursor: pointer;
+            background: #F1F2F6;
+         }
+         .search-input{
+            background: #F1F2F6;
+            
+            border: none !important;
+         }
+         .search-btn:focus , .search-input:focus{
+            box-shadow: none;
+            outline: none;
+            background-color: rgb(241, 242, 246, 1)
+         }
+         
+         .popover .arrow {
+            display: none;
+         }
+         .bs-popover-top{
+               position: absolute;
+               transform: translate3d(719px, 488px, 0px);
+               top: 0px;
+               left: -120px !important;
+               will-change: transform;
+               padding-top: 0rem;
+               padding-bottom: 2rem;
+         }
+         .navbar-light .navbar-nav .nav-link {
+    color: #CED6E0;
+}
+/*.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(0,0,0,.9) !important;
+}*/
+.popover{
+        background: #F1F2F6;
+      }
+      .popover-btn{
+        background: #5352ED !important;
+        color: #ffffff !important;
+        border-radius: 10px;
+        width: 100%
+      }
+      .popover-input{
+        border-radius: 10px;
+      }
+      .bs-popover-left{
+        margin-right: 0px;
+      }
+      .popover .arrow{
+        display: none !important;
+      }
+      .popover-close{
+        background-color: #5352ED;
+        color: #FFFFff;
+        border-radius: 50%;
+       padding-left: 0.3rem;
+       padding-right: 0.3rem;
+      }
+      .popover-close:hover{
+        background-color: #ffffff;
+        color: #5352ED;
+      }
+      .popover-width{
+         width: 100%;
+      }
+      .custbtn:hover {
+    color: #ffffff;
+    background: #2524E8;
+    border: 1px solid #2524E8;
+}
+.num-color {
+    color: #5352ED;
+    font-weight: 600;
+    float: right;
+    opacity: .8;
+}
+.header-share {
+    padding: 8px;
+    background: transparent;
+    border-radius: 8px;
+    color: #CED6E0;
+    font-weight: 500;
+}
+#inputState{
+   width : 15rem;
+}
+.btn-color-chnage:hover, .btn-color-chnage:focus {
+    color: #5352ED;
+    background-color: transparent;
+   
+    font-weight: 500 !important;
+    box-shadow: none;
+    width: 66%;
+    border: 1.2px solid #C0C1C4 !important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.5);
+}
+.share-btn{
+   border-radius: 10px;
+   padding: 10px;
+   background: #F1F2F6;
+}
+.social-btn{
+   border: rgb(0,0,0,0.1);
+   border-radius: 2px;
+   color: rgb(47, 53, 66,0.2)
+}
+      </style>
+
+   </head>
+   <body class="hold-transition ">
+      <!-- Site wrapper -->
+      <div class="container" id="container-width">
+         <!-- Navbar -->
+         <nav class="main-header navbar top-nav navbar-expand navbar-white navbar-light set-nav-margin">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+               <!-- Brand Logo -->
+               <li class="nav-item">
+                  <a class="brand-link" data-widget="pushmenu" href="#">
+                  <img src="../../dist/img/newpdlogo.png"
+                     alt="AdminLTE Logo" class="logo-img-width" 
+                     >
+                  </a>
+               </li>
+            </ul>
+            <form class="form-inline col-sm-7 search-margin-left">
+               <div class="input-group col-sm-7">
+                <input  class="form-control search-input pt-2 border-right-0 border" 
+                        type="search" 
+                        placeholder="Search for Products and More" 
+                        id="search-input">
+               <div class="input-group-append">
+                    <button type="button" class="search-btn search-input input-group-text"><i class="fa fa-search"></i></button>
+               </div>
+            </div>
+            </form>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav">
+               <!-- Notifications Dropdown Menu -->
+               <li class="nav-item dropdown">
+                  <a class="nav-link mr-2 fontnew-nav-right"  href="login1.html">
+                  Login
+                  </a>
+               </li>
+               <li class="mr-2 nav-item dropdown">
+                  <a class="nav-link ml-2 fontnew-nav-right" href="login2.html">
+                 Register
+                  </a>
+               </li>
+            </ul>
+         </nav>
+         <!-- /.navbar -->
+         <div class="wrapper mt-5">
+            <!-- Navbar -->
+            <!-- /.navbar -->
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper mt-5">
+               <div class="wrapper">
+                  <!-- Sidebar Holder -->
+                  <nav id="sidebar">
+                     <ul class="list-unstyled components">
+                        <p class="">Categories</p>
+                        <hr class="underline-cata">
+                        <li>
+                           <a href="demo.html">Laptops</a>
+                        </li>
+                        <li>
+                           <a href="#">Laptops Sleeves & Slipcase</a>
+                        </li>
+                        <li>
+                           <a href="#">Laptops Backpacks </a>
+                        </li>
+                        <li>
+                           <a href="#">Computer & Accessories Peripherals</a>
+                        </li>
+                     </ul>
+                     <div class="price-padding">
+                        <p class="">Price 
+                        <hr class="underline-cata">
+                        </p>
+                        <div class="col-sm-12">
+                           <input id="range_5" type="text" name="range_5" value="">
+                        </div>
+                     </div>
+                     <form class="discount-padding">
+                        <p  class="">Discount 
+                        <hr class="underline-cata-1">
+                        </p>
+                        <div class="radio">
+                           <label><input type="radio" name="optradio" class="mr-2">Less Than 10%</label>
+                        </div>
+                        <div class="radio">
+                           <label><input type="radio" name="optradio" class="mr-2">10 % Or More</label>
+                        </div>
+                        <div class="radio">
+                           <label><input type="radio" name="optradio" class="mr-2">20 % Or More</label>
+                        </div>
+                        <div class="radio">
+                           <label><input type="radio" name="optradio" class="mr-2">30 % Or More</label>
+                        </div>
+                        <div class="radio">
+                           <label><input type="radio" name="optradio" class="mr-2">40 % Or More</label>
+                        </div>
+                     </form>
+                     <form class="Customer-padding">
+                        <p  class="">Customer Rating 
+                        <hr class="underline-cata-1">
+                        </p>
+                        <div class="radio">
+                           <label><input type="radio" name="optradio" class="mr-2">4 Star & Abovee</label>
+                        </div>
+                        <div class="radio">
+                           <label><input type="radio" name="optradio" class="mr-2">3 Star & Abovee</label>
+                        </div>
+                        <div class="radio">
+                           <label><input type="radio" name="optradio" class="mr-2">2 Star & Abovee</label>
+                        </div>
+                        <div class="radio">
+                           <label><input type="radio" name="optradio" class="mr-2">1 Star & Abovee</label>
+                        </div>
+                     </form>
+                  </nav>
+                  <!-- Page Content Holder -->
+                  <div id="content">
+                     <nav class="navbar navbar-expand-lg navbar-light mb-0">
+                        <div class="container-fluid" id="container-fluid-padding">
+                           <button type="button" id="sidebarCollapse" class="navbar-btn">
+                           <img src="../../dist/img/left-arrow.png" class="img-chng"><span class="text-hide-change">Hide Filter</span>
+                           </button>
+                           <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                           <i class="fas fa-align-justify"></i>
+                           </button>
+                           <ul class="navbar-nav ">
+                              <!-- Brand Logo -->
+                              <li class="nav-item active ">
+                                 <a class="nav-link " href="#">
+                                    All Products 
+                                    <hr class="hrcls">
+                                 </a>
+                              </li>
+                              <li class="nav-item ">
+                                 <a class="nav-link " href="#">Most Popular</a>
+                              </li>
+                              <li class="nav-item ">
+                                 <a class="nav-link " href="#">Top Drops</a>
+                              </li>
+                           </ul>
+                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                              <ul class="nav navbar-nav ml-auto">
+                                 <form class="form-inline ">
+                                    <div class="form-group">
+                                       <label for="inputPassword6" class="mr-3 opecity-add">Sort By</label>
+                                       <select id="inputState" class="form-control box-border-trns bg-lightgy">
+                                          <option selected>Low to high </option>
+                                          <option value="1">high  To Low </option>
+                                          
+                                       </select>
+                                       </small>
+                                    </div>
+                                 </form>
+                              </ul>
+                           </div>
+                        </div>
+                     </nav>
+                     <div class="row">
+                        <div class="col-md-4 mt-5">
+                           <div class="card bg-white">
+                              <div class="card-header bg-white border-bottom-0">
+                                 <div class="float-right header-percent ">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i>30%
+                                 </div>
+                                 <div class="share-icon float-left header-share">
+                                    Share<i class="fa fa-share ml-1" aria-hidden="true"></i>
+                                 </div>
+                                 <span hidden class="share-btn">
+                                    <span  class="m-1">
+                                       <a href="#">
+                                          <i id="facebook-btn" 
+                                             onmouseover="socialIconChangeOnHover(this.id,'rgba(47, 53, 66, 1)','white')" 
+                                             onmouseout="socialIconChangeOnHover(this.id,'rgba(47, 53, 66, 0.2)','white')"
+                                             class="m-1 fa-lg social-btn fab fa-facebook-square"></i>
+                                       </a>
+                                    </span>
+                                    <span  class="m-1">
+                                       <a href="#">
+                                          <i id="twitter-btn" 
+                                             onmouseover="socialIconChangeOnHover(this.id,'rgba(47, 53, 66, 1)','white')" 
+                                             onmouseout="socialIconChangeOnHover(this.id,'rgba(47, 53, 66, 0.2)','white')"
+                                             class="m-1 fa-lg social-btn fab fa-twitter-square"></i>
+                                       </a>
+                                    </span>
+                                    <span  class="m-1">
+                                       <a href="#">
+                                          <i id="linkedin-btn" 
+                                             onmouseover="socialIconChangeOnHover(this.id,'rgba(47, 53, 66, 1)','white')" 
+                                             onmouseout="socialIconChangeOnHover(this.id,'rgba(47, 53, 66, 0.2)','white')"
+                                             class="m-1 fa-lg social-btn fab fa-linkedin-square" ></i>
+                                       </a>
+                                    </span>
+                                 </span>
+                                  
+                              </div>
+                              <div class="card-body ">
+                                 <div class="row">
+                                    <div class="col-12 text-center"><img src="../../dist/img/tv.png"  alt="" class=" img-fluid"></div>
+                                    <div class="col-12 ">
+                                       <p class="mt-5 chng-font-size">Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage,..</p>
+                                       <div><span class="text-dec pl-2">$599</span>
+                                          <span class="text-Cprice">$499.00</span>
+                                          <span class="num-color">Save $100!</span>
+                                       </div>
+                                       <!--  -->
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card-footer footer-color bg-white ">
+                                 <div class="">
+                                    <a href="javascript:void(0)" class="btn btn-color-chnage">
+                                    <img src="../../dist/img/Amazon_icon.png">Buy at Amazon
+                                    </a>
+                                    <a href="javascript:void(0)" data-toggle="popover" class="btn  bg-chng">
+                                    <img src="../../dist/img/ball.png">
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-4 mt-5">
+                           <div class="card bg-white">
+                              <div class="card-header bg-white border-bottom-0">
+                                 <div class="float-right header-percent ">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i>30%
+                                 </div>
+                                 <div class="float-left header-share">
+                                    Share<i class="fa fa-share ml-1" aria-hidden="true"></i>
+                                 </div>
+                              </div>
+                              <div class="card-body ">
+                                 <div class="row">
+                                    <div class="col-12 text-center"><img src="../../dist/img/earpot.png" alt="" class=" img-fluid"></div>
+                                    <div class="col-12 ">
+                                       <p class="mt-5 chng-font-size">Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage,..</p>
+                                       <div><span class="text-dec pl-2">$599</span>
+                                          <span class="text-Cprice">$499.00</span>
+                                          <span class="num-color">Save $100!</span>
+                                       </div>
+                                       <!--  -->
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card-footer footer-color bg-white ">
+                                 <div class="">
+                                    <a href="javascript:void(0)" class="btn btn-color-chnage">
+                                    <img src="../../dist/img/walmart-icon.png">Buy at Walmart
+                                    </a>
+                                    <a href="javascript:void(0)" data-toggle="popover" class="btn bg-chng">
+                                    <img src="../../dist/img/ball.png">
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-4 mt-5">
+                           <div class="card bg-white">
+                              <div class="card-header bg-white border-bottom-0">
+                                 <div class="float-right header-percent ">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i>30%
+                                 </div>
+                                 <div class="float-left header-share">
+                                    Share<i class="fa fa-share ml-1" aria-hidden="true"></i>
+                                 </div>
+                              </div>
+                              <div class="card-body ">
+                                 <div class="row">
+                                    <div class="col-12 text-center"><img src="../../dist/img/tv.png" alt="" class=" img-fluid"></div>
+                                    <div class="col-12 ">
+                                       <p class="mt-5 chng-font-size">Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage,..</p>
+                                       <div><span class="text-dec pl-2">$599</span>
+                                          <span class="text-Cprice">$499.00</span>
+                                          <span class="num-color">Save $100!</span>
+                                       </div>
+                                       <!--  -->
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card-footer footer-color bg-white ">
+                                 <div class="">
+                                    <a href="javascript:void(0)" class="btn btn-color-chnage">
+                                    <img src="../../dist/img/Amazon_icon.png">Buy at Amazon
+                                    </a>
+                                    <a href="javascript:void(0)" data-toggle="popover" class="btn  bg-chng">
+                                    <img src="../../dist/img/ball.png">
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-4 mt-5">
+                           <div class="card bg-white">
+                              <div class="card-header bg-white border-bottom-0">
+                                 <div class="float-right header-percent ">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i>30%
+                                 </div>
+                                 <div class="float-left header-share">
+                                    Share<i class="fa fa-share ml-1" aria-hidden="true"></i>
+                                 </div>
+                              </div>
+                              <div class="card-body ">
+                                 <div class="row">
+                                    <div class="col-12 text-center"><img src="../../dist/img/earpot.png" alt="" class=" img-fluid"></div>
+                                    <div class="col-12 ">
+                                       <p class="mt-5 chng-font-size">Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage,..</p>
+                                       <div><span class="text-dec pl-2">$599</span>
+                                          <span class="text-Cprice">$499.00</span>
+                                          <span class="num-color">Save $100!</span>
+                                       </div>
+                                       <!--  -->
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card-footer footer-color bg-white ">
+                                 <div class="">
+                                    <a href="javascript:void(0)" class="btn btn-color-chnage">
+                                    <img src="../../dist/img/walmart-icon.png">Buy at Walmart
+                                    </a>
+                                    <a href="javascript:void(0)" data-toggle="popover" class="btn  bg-chng">
+                                    <img src="../../dist/img/ball.png">
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-4 mt-5">
+                           <div class="card bg-white">
+                              <div class="card-header bg-white border-bottom-0">
+                                 <div class="float-right header-percent ">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i>30%
+                                 </div>
+                                 <div class="float-left header-share">
+                                    Share<i class="fa fa-share ml-1" aria-hidden="true"></i>
+                                 </div>
+                              </div>
+                              <div class="card-body ">
+                                 <div class="row">
+                                    <div class="col-12 text-center"><img src="../../dist/img/tv.png" alt="" class=" img-fluid"></div>
+                                    <div class="col-12 ">
+                                       <p class="mt-5 chng-font-size">Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage,..</p>
+                                       <div><span class="text-dec pl-2">$599</span>
+                                          <span class="text-Cprice">$499.00</span>
+                                          <span class="num-color">Save $100!</span>
+                                       </div>
+                                       <!--  -->
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card-footer footer-color bg-white ">
+                                 <div class="">
+                                    <a href="javascript:void(0)" class="btn btn-color-chnage">
+                                    <img src="../../dist/img/Amazon_icon.png">Buy at Amazon
+                                    </a>
+                                    <a href="javascript:void(0)" data-toggle="popover" class="btn  bg-chng">
+                                    <img src="../../dist/img/ball.png">
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-4 mt-5">
+                           <div class="card bg-white">
+                              <div class="card-header bg-white border-bottom-0">
+                                 <div class="float-right header-percent ">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i>30%
+                                 </div>
+                                 <div class="float-left header-share">
+                                    Share<i class="fa fa-share ml-1" aria-hidden="true"></i>
+                                 </div>
+                              </div>
+                              <div class="card-body ">
+                                 <div class="row">
+                                    <div class="col-12 text-center"><img src="../../dist/img/earpot.png" alt="" class=" img-fluid"></div>
+                                    <div class="col-12 ">
+                                       <p class="mt-5 chng-font-size">Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage,..</p>
+                                       <div><span class="text-dec pl-2">$599</span>
+                                          <span class="text-Cprice">$499.00</span>
+                                          <span class="num-color">Save $100!</span>
+                                       </div>
+                                       <!--  -->
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card-footer footer-color bg-white ">
+                                 <div class="">
+                                    <a href="javascript:void(0)" class="btn btn-color-chnage">
+                                    <img src="../../dist/img/walmart-icon.png">Buy at Walmart
+                                    </a>
+                                    <a href="javascript:void(0)" data-toggle="popover" class="btn  bg-chng">
+                                    <img src="../../dist/img/ball.png">
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-4 mt-5">
+                           <div class="card bg-white">
+                              <div class="card-header bg-white border-bottom-0">
+                                 <div class="float-right header-percent ">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i>30%
+                                 </div>
+                                 <div class="float-left header-share">
+                                    Share<i class="fa fa-share ml-1" aria-hidden="true"></i>
+                                 </div>
+                              </div>
+                              <div class="card-body ">
+                                 <div class="row">
+                                    <div class="col-12 text-center"><img src="../../dist/img/tv.png" alt="" class=" img-fluid"></div>
+                                    <div class="col-12 ">
+                                       <p class="mt-5 chng-font-size">Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage,..</p>
+                                       <div><span class="text-dec pl-2">$599</span>
+                                          <span class="text-Cprice">$499.00</span>
+                                          <span class="num-color">Save $100!</span>
+                                       </div>
+                                       <!--  -->
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="card-footer footer-color bg-white ">
+                                 <div class="">
+                                    <a href="javascript:void(0)" class="btn btn-color-chnage">
+                                    <img src="../../dist/img/Amazon_icon.png">Buy at Amazon
+                                    </a>
+                                    <a href="javascript:void(0)" data-toggle="popover" class="btn  bg-chng">
+                                    <img src="../../dist/img/ball.png">
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- /.content-wrapper -->
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+               <!-- <strong>Copyright &copy; 2020 <a href="http://adminlte.io">PriceDropd</a>.</strong> All rights
+                  reserved. -->
+            </footer>
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+               <!-- Control sidebar content goes here -->
+            </aside>
+            <!-- /.control-sidebar -->
+         </div>
+         <!-- ./wrapper -->
+         
+      </div>
+      <footer class="mt-5">
+         <nav class="navbar navbar-expand-sm navbar-light bg-light  set-nav-footer" style="margin-bottom: 0px; padding-left: 50px; padding-right: 50px;">
+           <strong class="footer-text">©️ 2020 Copyright PriceDropd</strong>
+           <div class="collapse show navbar-collapse" id="navbarCollapse">
+             <ul class="navbar-nav ml-auto ">
+               <li class="nav-item ">
+                 <a class="nav-link " href="#">About </a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link " href="#">Terms</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link " href="#">Privacy Policy</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link " href="#">Contact</a>
+               </li>
+             </ul>
+           </div>
+         </nav>
+       </footer>
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <script src="../../plugins/jquery/jquery.min.js"></script>
+      <!-- Bootstrap 4 -->
+      <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- AdminLTE App -->
+      <script src="../../dist/js/adminlte.min.js"></script>
+      <!-- AdminLTE for demo purposes -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <!-- Popper.JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+      <!-- Ion Slider -->
+      <script src="../../plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+           $('#sidebarCollapse').css({
+                     "margin-left":"-170px",
+                     "margin-right":"20px"
+                     });
+             $('#sidebarCollapse').on('click', function () {
+               $('#sidebarCollapse').css({
+                     "margin-left":"0px",
+                     "margin-right":"20px"
+                     });
+                 if(!$("#sidebar").hasClass('active')){
+                     $('.col-md-4').removeClass('col-md-4').addClass('col-md-3');
+                     $(".img-chng").attr('src', '../../dist/img/right-arrow.png');
+                     $(".text-hide-change").hide();
+                     
+         
+         
+                 }else{
+                   $('#sidebarCollapse').css({
+                     "margin-left":"-170px",
+                     "margin-right":"20px"
+                     });
+                   $('.col-md-3').removeClass('col-md-3').addClass('col-md-4');
+                   $(".img-chng").attr('src', '../../dist/img/left-arrow.png');
+                   $(".text-hide-change").show();
+                 }
+                 //
+                 $('#sidebar').toggleClass('active');
+                 $(this).toggleClass('active');
+
+             });
+
+         });
+          $(function () {
+         
+         /* ION SLIDER */
+         
+         $('#range_5').ionRangeSlider({
+         min     : 0,
+         max     : 1000,
+         from    : 200,
+         type    : 'single',
+         step    : 1,
+         prefix : '$',
+         prettify: false,
+         hasGrid : true
+         })
+         
+         })
+
+         // Pop-Over for product cards
+         $(function () {
+            let options = {
+              container: 'body',
+              html: true,
+              placement: 'top',
+              sanitize: false,
+              content: 
+                  `<div id="PopoverContent">
+                  <div class="text-right">
+                      <span class="popover-close">
+                        <i class="fa fa-times"></i>
+                      </span>
+                    </div>
+                    <h6 class="">Set a price drop alert and get notified when it hits your price.</h6>
+                    <div class="mt-5">
+                      <div class="mt-3">
+                        <input type="text" class="form-control from-input-inside" placeholder="$ 0.00">
+                      </div>
+                      <div class="mt-3 text-center">
+                        <button class="btn pl-5 pr-5  popover-width custbtn waves-effect waves-light">
+                          <span class="ml-4 mr-4">Set Price</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>`
+            }
+         $('[data-toggle="popover"]').popover(options)
+        });
+         $(document).on("click", ".popover .popover-close" , function(){
+                $(this).parents(".popover").popover('hide');
+            });
+         $('body').on('click', function (e) {
+             $('[data-toggle="popover"]').each(function () {
+                 //the 'is' for buttons that trigger popups
+                 //the 'has' for icons within a button that triggers a popup
+                 if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                     $(this).popover('hide');
+                 }
+             });
+         });
+         //Share  box effect
+$('.share-icon').hover(function(){
+            $('.share-btn').attr('hidden',false);
+            $('.share-icon').attr('hidden',true);
+         })
+         $('.share-btn').mouseleave(function(){
+            $('.share-btn').attr('hidden',true);
+            $('.share-icon').attr('hidden',false);
+         })
+
+         //change social media button color on hover
+         function socialIconChangeOnHover(id,color,background){
+            document.getElementById(id).style.color = color;
+            document.getElementById(id).style.background = background;
+         }
+
+         //search box effect
+           $('.search-input').focusin(function(){
+            $(this).css( "background", "white" );
+            $('.search-btn').css( "background", "white" );
+         })
+         $('.search-input').focusout(function(){
+            $(this).css( "background", "#f1f2f6" );
+            $( ".search-btn" ).css( "background", "#f1f2f6" );
+         })
+         $('.search-btn').focusin(function(){
+            $(this).css( "background", "white" );
+            $('.search-input').css( "background", "white" );
+         })
+         $('.search-btn').focusout(function(){
+            $(this).css( "background", "#f1f2f6" );
+            $( ".search-input" ).css( "background", "#f1f2f6" );
+         })
+      </script>
+   </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Profile | PriceDropd</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.css">
+ <link rel="stylesheet" type="text/css" href="../../dist/css/style.css"> 
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="hold-transition ">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar top-nav navbar-expand navbar-white navbar-light set-nav-margin">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <!-- Brand Logo -->
+ <li class="nav-item">
+                  <a class="brand-link" data-widget="pushmenu" href="#">
+                  <img src="../../dist/img/logo-new.png"
+                     alt="AdminLTE Logo"
+                     >
+                  </a>
+               </li>
+               <li class="nav-item d-none d-sm-inline-block addnewtop">
+                  <a href="profile.html" class="nav-link active fontnew-nav">Profile <hr class="hrcls"></a>
+               </li>
+               <li class="nav-item d-none d-sm-inline-block">
+                  <a href="dropalerts.html" class="nav-link fontnew-nav">Drop Alerts</a>
+               </li>
+    </ul>
+    <!-- Right navbar links -->
+     <ul class="navbar-nav ml-auto">
+               <!-- Notifications Dropdown Menu -->
+               <li class="nav-item dropdown">
+                  <a class="nav-link fontnew"  href="#">
+                   <img src="../../dist/img/sign-out-icon.png" class="sign-out-icon">
+                  </a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link  fontnew margin-right-setting"  href="setting.html">
+                  <i class="fa  fa-cog"></i>
+                  </a>
+               </li>
+            </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper bg-white mt-5">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+              
+               <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <div class="content mt-5">
+               <div class="container-fluid">
+                  <div class="row justify-content-md-center">
+                     <div class="col-lg-8">
+                        <div class="card shift-box-right new-card">
+                           <div class="card-body">
+                           
+                              <form class="form-horizontal" >
+                                 <div class="form-group col-md-6">
+                                    <label for="fname">Full Name</label>
+                                    <input type="text" class="from-input-inside form-control" id="fname" placeholder="Enter First Name">        
+                                 </div>
+                                
+                                 <div class="form-group col-md-6">
+                                    <label for="useremail">Email</label>
+                                    <input type="email" class="from-input-inside form-control" id="useremail" placeholder="Enter Email">        
+                                 </div>
+                                 <div class="form-row">
+                                    <div class="form-group col-md-6 ml-2">
+
+                                       <label for="pass">Password</label>
+                                       <input type="password" class="from-input-inside form-control"  id="password-field" value ="xyz123"> 
+                                       <span toggle="#password-field" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
+                                    </div>
+                                    <div class="ml-2 changebutton">
+                                       <button class="btn btntextcolor" type="button" id="new-pass-filed" style="margin-top: 39px;">Change Password</button>
+                                    </div>
+                                 </div>
+                                 
+                                 <div class="chng-pass-hide mt-3" >
+                                  <p class="head-text1">Change Password</p>
+                                    <div class="form-group col-md-6">
+                                       <label for="newpassword">New Password</label>
+                                       <input type="password" class="from-input-inside form-control" id="newpassword" value ="xyz1234"> 
+                                        <span toggle="#newpassword" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>       
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                       <label for="confrmpassword">Confirm Password</label>
+                                       <input type="password" class="from-input-inside form-control" id="conpassword" value ="xyz1234">
+                                       <span toggle="#conpassword" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>         
+                                    </div>
+                                 </div>
+                                 <div class="mt-3 col-md-6">
+                                       <button class="btn custbtn  col-md-12 waves-effect waves-light" type="submit">Save</button>
+                                    </div>
+                              </form>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  <!-- /.row -->
+               </div>
+               <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+         </div>
+         <!-- /.content-wrapper -->
+  <!-- /.content-wrapper -->
+
+    <footer class="mt-5">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light  set-nav-footer">
+        <strong class="footer-text">©️ 2020 Copyright PriceDropd</strong>
+        <div class="collapse show navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item ">
+              <a class="nav-link " href="#">About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Terms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Privacy Policy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<script type="text/javascript">
+         
+
+         $(document).ready(function(){
+          $(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye-slash fa-eye");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+             $('.chng-pass-hide').hide();
+             $("#new-pass-filed").click(function() {
+                   $(".chng-pass-hide").show();
+               });
+           });
+         
+         
+      </script>
+</body>
+</html>
